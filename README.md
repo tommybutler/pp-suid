@@ -41,48 +41,51 @@ PREREQUISITES
 
 USAGE
 
-   # Don't be a moron who just copies and pastes this.  Read it _all_.  Then
-   # start by editing example_script.pl, replacing "tommy" with your username
+   # Don't be a moron who just copies and pastes this.  Read it _all_.
 
-   # Get the patched code for App::PAR::Packer and example usage files
+   # Get the patched code for App::PAR::Packer and example usage files:
    
    $ git clone https://github.com/tommybutler/pp-suid.git && cd pp-suid
 
-   # Get all prereqs installed, after which we install patched version below
+   # Get all prereqs installed, after which we install patched version below:
    
    $ cpanm pp Filter::Crypto
 
-   # Unpack the patched distribution
+   # Unpack the patched distribution:
    
    $ tar xzf PAR-Packer-1.015-patched-for-suid.tgz
 
-   # Enter the source directory for the distribution
+   # Enter the source directory for the distribution:
    
    $ cd PAR-Packer-1.015-patched-for-suid/
 
-   # Make the distribution, and test it
+   # Make the distribution, and test it:
    
    $ perl Makefile.pl && make test # correct any errors before continuing!
 
-   # If you have a perlbrew or local::lib, omit "sudo" from the command below
+   # If you have a perlbrew or local::lib, omit "sudo" from the command below:
    
    $ sudo make install # install patched version of App::PAR::Packer and pp
 
-   # You can stop at this point, unless you want help getting started
+   # You can stop at this point, unless you want help getting started:
 
-   # Go back to the directory with the example files in it
+   # Go back to the directory with the example files in it:
    
    $ cd ..
+   
+   # Begin the guided tour by editing example_script.pl, replacing "tommy" with your username
+   
+   $ vi example_script.pl
 
-   # Make the example files executable
+   # Make the example files executable:
    
    $ chmod +x ./exec_wrapper.sh ./build.sh
 
-   # Build an SUID binary (make sure you read and customized the script first)
+   # Build an SUID binary (make sure you read and customized the script first):
    
    $ ./build.sh example_script.pl
 
-   # Prepare to run the SUID binary (customize this with your own info)
+   # Prepare to run the SUID binary (customize this with your own info):
    
    $ run_as='name of user whose ID you want to assume' # example: run_as=john
 
